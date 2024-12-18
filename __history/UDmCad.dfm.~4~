@@ -1,0 +1,89 @@
+object DmCad: TDmCad
+  Height = 480
+  Width = 640
+  object TbCadPon: TFDQuery
+    OnNewRecord = TbCadPonNewRecord
+    CachedUpdates = True
+    Connection = FMain.DbConnection
+    SQL.Strings = (
+      'Select * From TbCadPon'
+      '  Order By ID')
+    Left = 24
+    Top = 8
+    object TbCadPonID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object TbCadPonNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 80
+    end
+    object TbCadPonCONTATO: TStringField
+      FieldName = 'CONTATO'
+      Origin = 'CONTATO'
+      Size = 11
+    end
+    object TbCadPonQTDCARTELA: TIntegerField
+      FieldName = 'QTDCARTELA'
+      Origin = 'QTDCARTELA'
+    end
+  end
+  object DsCadPon: TDataSource
+    DataSet = TbCadPon
+    Left = 24
+    Top = 64
+  end
+  object TbAux: TFDQuery
+    Connection = FMain.DbConnection
+    Left = 600
+    Top = 8
+  end
+  object TbDivCar: TFDQuery
+    OnNewRecord = TbCadPonNewRecord
+    CachedUpdates = True
+    Connection = FMain.DbConnection
+    SQL.Strings = (
+      'Select * From TbCadPon'
+      '  Order By ID')
+    Left = 96
+    Top = 8
+    object IntegerField1: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object StringField1: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 80
+    end
+    object StringField2: TStringField
+      FieldName = 'CONTATO'
+      Origin = 'CONTATO'
+      Size = 11
+    end
+    object IntegerField2: TIntegerField
+      FieldName = 'QTDCARTELA'
+      Origin = 'QTDCARTELA'
+    end
+    object TbDivCarNumIni: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'NumIni'
+      Calculated = True
+    end
+    object TbDivCarNumFin: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'NumFin'
+      Calculated = True
+    end
+  end
+  object DsDivCar: TDataSource
+    DataSet = TbDivCar
+    Left = 96
+    Top = 64
+  end
+end

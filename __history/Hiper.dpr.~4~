@@ -1,0 +1,18 @@
+program Hiper;
+
+uses
+  Vcl.Forms,
+  Main in 'Main.pas' {FMain},
+  UCadPon in 'UCadPon.pas' {FCadPon},
+  DmCad in 'DmCad.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TFCadPon, FCadPon);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

@@ -1,0 +1,48 @@
+unit UCadDis;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFCadDis = class(TForm)
+    PanFundo: TPanel;
+    PanGrid: TPanel;
+    GridPon: TDBGrid;
+    Panel1: TPanel;
+    BtNew: TBitBtn;
+    BtCancel: TBitBtn;
+    BtAlter: TBitBtn;
+    btExclude: TBitBtn;
+    BtSave: TBitBtn;
+    Panel2: TPanel;
+    PanInfo: TPanel;
+    Label1: TLabel;
+    Panel3: TPanel;
+    Label4: TLabel;
+    mCod: TDBEdit;
+    mNom: TDBEdit;
+    PanPes: TPanel;
+    ComboBox1: TComboBox;
+    Label5: TLabel;
+    Edit1: TEdit;
+    Label6: TLabel;
+    BtSea: TBitBtn;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCadDis: TFCadDis;
+
+implementation
+
+{$R *.dfm}
+
+end.

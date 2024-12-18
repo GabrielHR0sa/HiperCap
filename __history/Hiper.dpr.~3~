@@ -1,0 +1,16 @@
+program Hiper;
+
+uses
+  Vcl.Forms,
+  Main in 'Main.pas' {FMain},
+  UCadPon in 'UCadPon.pas' {FCadPon};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TFCadPon, FCadPon);
+  Application.Run;
+end.
